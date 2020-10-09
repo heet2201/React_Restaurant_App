@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class Detail extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-        }
-    }
-
+    
     renderComments(dish) {
         if(dish != null)
         {
@@ -66,6 +58,9 @@ class Detail extends Component {
     }
 
     render() {
+
+        console.log("DishDetail Componenet render is invoked");
+
         return (
             <div className="container">
                 <div className="row">

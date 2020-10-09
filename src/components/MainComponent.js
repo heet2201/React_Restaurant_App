@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponent'
 import Detail from './DishDetailComponent'
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 import './../App.css';
 import {DISHES} from './../shared/dishes'
 
 class Main extends Component {
 
   constructor(props) {
+
+    console.log("Main Componenet constructor is invoked");
     super(props);
 
     this.state = {
@@ -16,24 +19,24 @@ class Main extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log("Main Componenet componenetDidMount is invoked");
+  } 
+
   onDishSelect(dishId) {
     this.setState({ selectedDish: dishId});
   }
 
   render() {
+    console.log("Main Componenet render is invoked");
     return (
       <div>
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">
-              <b>Ristorante Con Fusion</b>
-            </NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <Menu dishes={this.state.dishes} 
           onClick={ (dishId) => this.onDishSelect(dishId) }/>
         <Detail 
           selectedDish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+          <Footer />
       </div>
     );
   }
