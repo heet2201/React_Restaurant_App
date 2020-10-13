@@ -5,7 +5,7 @@ import Contact from './ContactComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
-import About from './../AboutUs';
+import About from './AboutUs';
 import './../App.css';
 import { DISHES } from './../shared/dishes';
 import { COMMENTS } from './../shared/comments';

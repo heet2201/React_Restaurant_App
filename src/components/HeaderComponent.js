@@ -26,7 +26,7 @@ class Header extends Component{
             // Or
             //<React.Fragment></React.Fragment>
             <>
-                <Navbar dark expand="md">
+                <Navbar dark expand="md" fixed="top">
                     <div className="container">
                         <NavbarToggler onClick={this.togglerNav} />
 
