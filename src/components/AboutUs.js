@@ -2,43 +2,35 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderLeader({leaders}) {
+function RenderLeader({leader}) {
 
-    const leaders_ret = leaders.map((leader) => {
         return (
-            <div>
-                <div className="row">
-                    <div className="col-2">
-                        <Media left href="#">
-                            <Media object src={leader.image} alt={leader.name} />
-                        </Media>
-                    </div>
-               
-                    <div className="col">
-                        <Media body>
-                            <Media heading>
-                                {leader.name}
-                            </Media>
-                            {leader.designation}
-                            <br /><br />
-                            {leader.description}
-                        </Media>
-                    </div>
-                </div>
-
-                <br />
+            <div className="mb-4">
+                <Media tag="li">
+                    <Media left top className="pr-5">
+                    <Media object src={leader.image} alt={leader.name} />
+                    </Media>
+                    <Media body>
+                    <Media heading>
+                        {leader.name}
+                    </Media>
+                    <p>{leader.designation}</p>
+                    <p>{leader.description}</p>
+                    </Media>
+                </Media>
             </div>
         );
-    });
-
-    return (
-        <div>
-            {leaders_ret}
-        </div>
-    );
 }
 
 function About(props) {
+
+    const leaders = props.leaders.map((leader) => {
+        return (
+          <div key={leader.id}>
+            <RenderLeader leader={leader}></RenderLeader>
+          </div>
+        );
+      });
 
     return(
         <div className="container">
@@ -96,7 +88,7 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
-                        <RenderLeader leaders={props.leaders}/>
+                        {leaders}
                     </Media>
                 </div>
             </div>
