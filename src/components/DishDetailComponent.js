@@ -24,7 +24,7 @@ function CommentForm(props) {
             // React Fragment
             <>
                 <Button outline onClick={toggle}>
-                    <span className="fa fa-pencil fa-lg"></span> Submit Comment
+                    <span className="fa fa-pencil fa-lg fa-fw"></span> Submit Comment
                 </Button>
 
                 <Modal isOpen={modal} toggle={toggle}>
