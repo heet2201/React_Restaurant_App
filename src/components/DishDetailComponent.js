@@ -16,8 +16,9 @@ function CommentForm(props) {
 
     const handleComment = (values) => {
         toggle();
-        console.log("Current State is: "+ JSON.stringify(values));
-        alert("Current State is: "+ JSON.stringify(values));
+        props.addComment(props.dishId, values.rating, values.name, values.comment)
+        // console.log("Current State is: "+ JSON.stringify(values));
+        // alert("Current State is: "+ JSON.stringify(values));
     }
 
         return (
@@ -110,7 +111,7 @@ function RenderDish({dish}) {
         } 
 }
 
-function RenderComment({comments}) {
+function RenderComment({comments, addComment, dishId}) {
     if(comments != null)
         {
             const ret = comments.map((comment) => {
@@ -131,7 +132,9 @@ function RenderComment({comments}) {
                     <br />
                     <ul className="list-unstyled">
                         {ret}
-                        <CommentForm />
+                        <CommentForm 
+                            dishId={dishId}
+                            addComment={addComment} />
                     </ul>
                 </div>
             );
@@ -173,7 +176,9 @@ function Detail(props) {
                             <RenderDish dish={props.dish} />
                     </div>
                     <div className="col-12 col-md-5">
-                            <RenderComment comments={props.comments} />
+                            <RenderComment comments={props.comments} 
+                                addComment={props.addComment}
+                                dishId={props.dish.id} />
                     </div>
                 </div>
             </div>
