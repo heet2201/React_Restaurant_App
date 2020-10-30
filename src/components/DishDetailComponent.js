@@ -133,7 +133,7 @@ function RenderComment({comments, postComment, dishId}) {
                                         <br />
                                 </div>
                             </li>
-                            </Fade>
+                        </Fade>
                 );
             });
 
