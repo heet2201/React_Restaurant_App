@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,
-         Row, Col, Label, Container } from 'reactstrap';
+import React, { useState } from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,
+         Row, Label, Container } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors} from 'react-redux-form'
 import { Loading } from './LoadingComponent';
